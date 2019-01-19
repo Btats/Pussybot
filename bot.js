@@ -2,21 +2,16 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-client.on("message", message => {
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith("مسح!")) {
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **زبك مش كبير كفاية**');
-        var msg;
-        msg = parseInt();
-      
-      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-      message.channel.sendMessage("", {embed: {
-        title: "Done | تــم",
-        color: 0x06DF00,
-        description: "مسحت الشات بكسي يقلبي",
-        footer: {
-          text: "Plus Bot"
-        }
-      }}).then(msg => {msg.delete(3000)});
-                          }
+client.on('message', function(message) {
+                  if(!message.channel.guild) return;
+    if(message.content ===  ("!color 100")) {
+        if(message.member.hasPermission('MANAGE_ROLES')) {
+            setInterval(function(){})
+            message.channel.send('اصبر اخلص يبن المتناكة')
+        }else{
+            message.channel.send('معكش برمشن يبن الوسخة')
+            }
+    }
 });
+
+client.login("NTM2MDk3ODM2NzY1NDEzMzc2.DyRviQ.nmfchfgZjFwoiX62IAea7tgGTZY");
